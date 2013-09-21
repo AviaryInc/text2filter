@@ -29,7 +29,7 @@ function genTwiml(message, mediaUrl) {
         ].join('');
 }
 
-app.get('/incoming', function(req, res) {
+app.post('/incoming', function(req, res) {
     var message = req.body.Body;
     var from = req.body.From;
 
