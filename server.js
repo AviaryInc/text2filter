@@ -17,7 +17,7 @@ app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 
 function genTwiml(message, mediaUrl) {
     if (mediaUrl && mediaUrl.length > 0) {
-        message += '<media>' + mediaUrl + '</media>';
+        message += '<Media>' + mediaUrl + '</Media>';
     }
 
     return ['<?xml version="1.0" encoding="UTF-8"?>',
@@ -37,7 +37,7 @@ app.get('/incoming', function(req, res) {
     var urlPattern = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/
     var urls = urlPattern.exec(message);
 
-    // TODO: Ex
+    // TODO: Add support for MMS
 
     if(urls && urls.length > 0) {
         var imageUrl = urls[0];
@@ -55,7 +55,7 @@ app.get('/incoming', function(req, res) {
                 return res.end(regenTwiml('Oops! Try sending a valid image url.'));
             } 
             
-            return res.end(genTwiml('Oooh pretty!', renderedUrl))
+            return res.end(genTwiml('Oooh pretty!' + renderedUrl))
         });
     } else {
         res.writeHead(200, {'Content-Type': 'text/xml'});
