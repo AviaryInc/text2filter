@@ -52,7 +52,7 @@ app.post('/incoming', function(req, res) {
             
             if (err) {
                 console.log(err);
-                return res.end(regTwiml('Oops! Try sending a valid image url.'));
+                return res.end(genTwiml('Oops! Try sending a valid image url.'));
             } 
             
             return res.end(genTwiml('Oooh pretty!' + renderedUrl))
