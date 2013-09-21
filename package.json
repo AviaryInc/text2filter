@@ -1,0 +1,30 @@
+{
+  "name": "text2filter",
+  "version": "0.0.1",
+  "author": "Aviary <partners@aviary.com>",
+  "description": "a simple mms photo filter service",
+  "contributors": [ 
+    {
+      "name": "Ari Fuchs",
+      "email": "ari@aviary.com"
+    } 
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nodejitsu/http-server.git"
+  },
+  "keywords": [
+    "aviary",
+    "twilio",
+    "photo",
+    "mms"
+  ],
+  "dependencies" : {
+    "aviary": "*",
+    "twilio": "*",
+    "express": "*"
+  },
+  "engines": {
+    "node": ">=0.8"
+  }
+}
